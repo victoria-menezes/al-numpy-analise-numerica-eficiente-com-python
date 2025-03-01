@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 url = 'https://raw.githubusercontent.com/allanspadini/numpy/dados/citrus.csv'
 
 dados = np.loadtxt(url,delimiter=',',usecols=np.arange(1,6,1),skiprows=1)
-print(np.shape(dados))
 
 diametro_laranja = dados[:5000,0]
 peso_laranja = dados[:5000,1]
@@ -21,6 +20,8 @@ ax_citrus.plot(diametro_toranja, peso_toranja)
 ax_citrus.legend(['Laranja','Toranja'])
 ax_citrus.set_xlabel('Diâmetro')
 ax_citrus.set_ylabel('Peso')
+
+ax_citrus.set_yticks(np.arange(0,276,25))
 
 # y = ax + b
 x_l = diametro_laranja
